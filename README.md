@@ -8,7 +8,7 @@ Widgets is the way to extend Colibo with Visual or functional components. Widget
 - search-widgets (for searching external sources)
 - configuration-widgets (for configuring widget-instances)
 
-Widgets are stand-alone clientside `webcomponents` that are instantiated with instance-configuration and have access to context. This means you are free and able to develop your widgets with whatever technology you prefer, as long as they are exposed as a webcomponent. We recommend using `shadowDOM` to avoid future and preset styling-conflicts. Please refer to the examples at the end to see different technologies applied (Angular, react, LitElement, etc.)
+Widgets are stand-alone clientside `webcomponents` that are instantiated with instance-configuration and have access to context. This means you are free and able to develop your widgets with whatever technology you prefer, as long as they are exposed as a webcomponent. We recommend using `shadowDOM` to avoid styling-conflicts. Please refer to the examples at the end to see different technologies applied (Angular, react, LitElement, etc.)
 
 ## Widgets are registered in Colibo with
 
@@ -53,6 +53,8 @@ Colibo exposes a global `colibo`-object (on window), that allows widgets to know
 interface colibo {
     user: {
         fullName: string;
+        firstName: string;
+        lastName: string;
         email: string;
         id: number;
         departmentId: number;
@@ -67,13 +69,19 @@ interface colibo {
     
     event$: Observable<{ type: string; data: any }>;
 
-    aquireGraphToken: (resource: string) => Promise<{ expires: Date, value: string }>
+    helpers: {
 
-    httpClient: AngularHttpClient;
+        aquireGraphToken: (resource: string) => Promise<{ expires: Date, value: string }>
 
-    http: {
-        get: (url: string) => Promise<Response>,
-        post: (url: string, body: any) => Promise<Response>
+        formatDate: (date: string | Date, dateFormat?: string) => string
+
+        httpClient: AngularHttpClient;
+
+        http: {
+            get: (url: string) => Promise<Response>,
+            post: (url: string, body: any) => Promise<Response>
+        }
+    
     }
 
     idToken: string; /* coming soon... */
@@ -82,11 +90,12 @@ interface colibo {
 
 A couple of these might require a little elaboration. 
 
-- **aquireGraphToken** is a method to easily get the appropriate token for the users access to a given resource
 - **event$** is a ([RxJS](https://rxjs-dev.firebaseapp.com/)) stream of platform events. The observable have a `subscribe` method on it, that notifies a callback function for each platform event. These platform events all have `type` and `data` properties, and can optionally have a `customData` property as well. Subscribe for navigation-, behaviour-, timing events and more. 
-- **httpClient** is a reference to an instance of the Angular [httpClient](https://angular.io/api/common/http/HttpClient). Use these to achieve authorized access to Colibo-services, and to have a convenient way to do http-requests (without needing polyfills for legacy browsers).
-- **http** is an object that contains references to the httpClient method of the same name. 
-
+- **helpers** contains a number of helper functions:
+  - **aquireGraphToken** is a method to easily get the appropriate token for the users access to a given resource
+  - **formatDate** can be used to format strings or dates using the correct locale. Using DateFNS formatting: (https://date-fns.org/v2.8.1/docs/format)
+  - **httpClient** is a reference to an instance of the Angular [httpClient](https://angular.io/api/common/http/HttpClient). Use these to achieve authorized access to Colibo-services, and to have a convenient way to do http-requests (without needing polyfills for legacy browsers).
+  - **http** is an object that contains references to the httpClient method of the same name. 
 
 
 ## Styling
