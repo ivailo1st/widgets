@@ -43,8 +43,8 @@ When Colibo instantiates your widget custom-element, it will set the instance's 
 
 ## Search Widgets
 
-Search widgets are a way to add more search-capabilities to Colibo. The widget itself is responsible for showing the search-results. The widget is instantiated like page-widgets, but must also maintain a `tabName` property, and a `search` method. In order to have result-count shown in the tabbar, the search-method can return a promise that resolves to this number. 
-
+Search widgets are a way to add more search-capabilities to Colibo. The widget itself is responsible for showing the search-results. The widget is instantiated like page-widgets, but must also maintain a `tabName` property, and `search` and `clear` methods. The search-method is called with a string of the searchword whenever a user performans a search. the search-method can return a promise that resolves to a number that will be displayed in the tab-bar. Whenever the user clears the search, the `clear` method will be called.
+ 
 ## Context
 
 Colibo exposes a global `colibo`-object (on window), that allows widgets to know about their context, and provide some extra convenience. 
