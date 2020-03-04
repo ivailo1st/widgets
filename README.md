@@ -5,6 +5,7 @@
 Widgets is the way to extend Colibo with Visual or functional components. Widgets can have one of these types: 
 - page-widgets (for a dashboard-style widget, etc.)
 - global widgets (singletons for tracking, global alert-bars, etc.)
+- sidebar widgets (shows up in the sidebar)
 - search-widgets (for searching external sources)
 - configuration-widgets (for configuring widget-instances)
 
