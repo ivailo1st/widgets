@@ -22,7 +22,7 @@ Widgets are defined by the following fields (and can furthermore be imported/exp
 -   **LegacyBundleUrl** An (optional) corresponding bundle for older browsers that don't support webcomponents v1. 
 -	**Type** The Type of your widget (Page, Global, Search, Configuration).
 -   **InitialHeight** A pixel value for the initial height of the widget. This is a means to avoid jumping/shifting the layout when your widget loads (the value will be set as style.minHeight on the element). 
--	**Configuration-definition** Define the configuration-options for your widget as a list of type, keys, label, description and default-values. Use the "builder" in colibo to define your configuration. See below for details about the custom type. 
+-	**Configuration-definition** Define the configuration-options for your widget as a list of type, keys, label, required, description and default-values. Use the "builder" in colibo to define your configuration. See below for details about the custom type. 
 -   **Internal** (boolean) widgets that cannot be edited/deleted
 
 ### Custom configuration field widgets
