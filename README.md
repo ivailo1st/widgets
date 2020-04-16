@@ -78,16 +78,18 @@ interface colibo {
 
     helpers: {
 
-        aquireGraphToken: (resource: string) => Promise<{ expires: Date, value: string }>
+        aquireGraphToken: (resource: string) => Promise<{ expires: Date, value: string }>;
 
-        formatDate: (date: string | Date, dateFormat?: string) => string
-
+        formatDate: (date: string | Date, dateFormat?: string) => string;
+        
         httpClient: AngularHttpClient;
 
         http: {
             get: (url: string) => Promise<Response>,
             post: (url: string, body: any) => Promise<Response>
         }
+        
+        navigate: (url: string) => Promise<any>;
     
     }
 
@@ -103,6 +105,7 @@ A couple of these might require a little elaboration.
   - **formatDate** can be used to format strings or dates using the correct locale. Using DateFNS formatting: (https://date-fns.org/v2.8.1/docs/format)
   - **httpClient** is a reference to an instance of the Angular [httpClient](https://angular.io/api/common/http/HttpClient). Use these to achieve authorized access to Colibo-services, and to have a convenient way to do http-requests (without needing polyfills for legacy browsers).
   - **http** is an object that contains references to the httpClient method of the same name. 
+  - **navigate** is a method that navigates to a url with out clientside router
 
 
 ## Styling
