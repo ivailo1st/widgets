@@ -78,7 +78,7 @@ interface colibo {
 
     helpers: {
 
-        aquireGraphToken: (resource: string) => Promise<{ expires: Date, value: string }>;
+        addGraphResouce: (resource: string) => void;
 
         formatDate: (date: string | Date, dateFormat?: string) => string;
         
