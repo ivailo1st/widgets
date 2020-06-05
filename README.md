@@ -126,4 +126,5 @@ Webcomponent-support is pretty broad (see [caniuse](https://caniuse.com/#feat=cu
 
 ## Examples
 
-*Examples will follow*
+[Vanilla (no framework) Hello-world widget](https://github.com/colibodev/widgets/tree/master/examples/vanilla)
+
