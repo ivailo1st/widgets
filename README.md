@@ -22,6 +22,7 @@ Widgets are defined by the following fields (and can furthermore be imported/exp
 -   **InitialHeight** A pixel value for the initial height of the widget. This is a means to avoid jumping/shifting the layout when your widget loads (the value will be set as style.minHeight on the element). 
 -	**Configuration-definition** Define the configuration-options for your widget as a (nested) list of type, keys, label, required, description and default-values. Use the "builder" in colibo to define your configuration. See below for details about the custom type.
 
+The widget-registration is available as a json-string from the "source"-tab, and can be uploaded for easy installation (see the accompanying widget.json in the examples linked below).
 
 ## Widget instances
 A widget can be used in multiple instances, with different configurations. Furthermore widget-instances each have `recipients` and can be `disabled`. 
