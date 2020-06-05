@@ -1,0 +1,26 @@
+{
+    "name": "Hello World",
+    "allowedLocationTypes": [
+        "Home"
+    ],
+    "description": "Simple example widget",
+    "bundleUrl": "https://your-cdn.com/hello-world.element.js",
+    "legacyBundleUrl": "https://your-cdn.com/hello-world.element.es5.js",
+    "htmlElementName": "example-hello-world",
+    "initialDisplayHeight": 100,
+    "configurationDefinition": [
+        {
+            "defaultValue": "Hello World",
+            "description": "What should be showed as the header in this widget",
+            "key": "header",
+            "label": "Header",
+            "required": false,
+            "type": "string",
+            "bundleUrl": null,
+            "legacyBundleUrl": null,
+            "htmlElementName": null,
+            "elementConfiguration": "",
+            "fields": []
+        }
+    ]
+}
