@@ -125,7 +125,8 @@ To enable a card-design for your widget, you can add a `clb-widget` className to
 Webcomponent-support is pretty broad (see [caniuse](https://caniuse.com/#feat=custom-elementsv1)). For legacy browsers that don't support the entire spec, Colibo conditionally loads the needed [polyfills](https://www.npmjs.com/package/@webcomponents/webcomponentsjs) once, so you don't have to deal with it.
 
 ## Examples
+Consider these examples/starting points for different frameworks and different purposes. 
 
-[hello-world widget](https://github.com/colibodev/widgets/tree/master/examples/vanilla) - Vanilla JS (no framework)
-[news-search widget](https://github.com/colibodev/widgets/tree/master/examples/LitElement) - LitElement w. Typescript
+-   [hello-world widget](https://github.com/colibodev/widgets/tree/master/examples/vanilla) - Vanilla JS (no framework)
+-   [news-search widget](https://github.com/colibodev/widgets/tree/master/examples/LitElement) - LitElement w. Typescript
 
