@@ -1,0 +1,26 @@
+{
+    "name": "News Søg",
+    "allowedLocationTypes": [
+        "Search"
+    ],
+    "description": "Search news from newsapi.org",
+    "bundleUrl": "https://your-cdn.com/news-search.element.js",
+    "legacyBundleUrl": "https://your-cdn.com/news-search.element.es5.js",
+    "htmlElementName": "example-news-search",
+    "initialDisplayHeight": 0,
+    "configurationDefinition": [
+        {
+            "defaultValue": null,
+            "description": "You can register a key on https://newsapi.org/",
+            "key": "apiKey",
+            "label": "Api key",
+            "required": false,
+            "type": "string",
+            "bundleUrl": null,
+            "legacyBundleUrl": null,
+            "htmlElementName": null,
+            "elementConfiguration": "",
+            "fields": []
+        }
+    ]
+}

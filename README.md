@@ -126,5 +126,6 @@ Webcomponent-support is pretty broad (see [caniuse](https://caniuse.com/#feat=cu
 
 ## Examples
 
-[Vanilla (no framework) Hello-world widget](https://github.com/colibodev/widgets/tree/master/examples/vanilla)
+[hello-world widget](https://github.com/colibodev/widgets/tree/master/examples/vanilla) - Vanilla JS (no framework)
+[news-search widget](https://github.com/colibodev/widgets/tree/master/examples/LitElement) - LitElement w. Typescript
 
