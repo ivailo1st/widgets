@@ -34,11 +34,11 @@ When Colibo instantiates your widget custom-element, it will set the instance's 
 
 ## Special Widget types
 
-## Search Widgets
+### Search Widgets
 
 Search widgets are the way to add more search-capabilities to Colibo. The widget itself is responsible for showing the search-results. The widget must implement `search` and `clear` methods. The search-method is called with a string of the searchword whenever a user performans a search. The search-method should return a promise that will resolve to the number that will be displayed in the tab-bar. Whenever the user clears the search, the `clear` method will be called. At instantiation-time an additional `simpleMode` (boolean) property will be assigned - this will be true, when your search-widget is displayed in the navigation - and false in other cases (like the advanced search page). We recommend showing no settings and pagination-options when in simpleMode. Search widgets are displayed in tabs - see additional information below. 
 
-## Widgets in tabs
+### Widgets in tabs
 
 For some locations widgets are shown in tabs (currently Search and Sidebar). These widgets must maintain a `tabName` (string) property that represents the name of their tab. In the Sidebar, a `icon` property (for an svg) replaces this need. 
 For widgets displayed in tabs, Colibo will maintain an `active` (boolean) property on the widget. We suggest implementing a set'ter function and act appropriately when your widget is not active.
