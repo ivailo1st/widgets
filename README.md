@@ -85,8 +85,8 @@ interface colibo {
         formatDate: (date: string | Date, dateFormat?: string) => string;
 
         http: {
-            get: (url: string) => Promise<Response>,
-            post: (url: string, body: any) => Promise<Response>
+            get: (url: string, options: any) => Promise<Response>,
+            post: (url: string, body: any, options: any) => Promise<Response>
         }
 
         httpClient: AngularHttpClient;
