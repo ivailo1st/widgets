@@ -92,7 +92,12 @@ interface colibo {
         httpClient: AngularHttpClient;
         
         navigate: (url: string) => Promise<any>;
-    
+        
+        storage: {
+            load: (widget: string, name: string) => Promise<string>,
+            save: (widget: string, name: string, value: string) => Promise<boolean>,
+            clear: (widget: string, name: string) => Promise<boolean>
+        }    
     }
 }
 ```
@@ -106,6 +111,7 @@ A couple of these might require a little elaboration.
   - **http** is an object that contains references to the httpClient method of the same name. 
   - **httpClient** is a reference to an instance of the Angular [httpClient](https://angular.io/api/common/http/HttpClient). Use these to achieve authorized access to Colibo-services, and to have a convenient way to do http-requests (without needing polyfills for legacy browsers).
   - **navigate** is a method that navigates to a url with out clientside router
+  - **storage** A number of helper functions that will assist in clearing, saving, and loading strings on the server. Use a unique name and a key to store a string-value. It is recommended to use the namespaced element tag name, or similar: e.g. "company-widget".
 
 ## Styling
 To ensure a consistent layout, colibo publishes a set of css custom-properties to use in your widget. This way you can make sure that your widgets aligns visually with other types of colibo-content, and acts responsively to the viewport-size.
