@@ -6,6 +6,7 @@ Widgets are the way to extend Colibo with visual or functional components. Widge
 - Sidebar (in its own tab)
 - Search (in its own search-tab)
 - UserProfile (on the profile page)
+- Groups and departments (Above the main content on subpages)
 
 Widgets are stand-alone clientside `webcomponents` that are instantiated with instance-configuration and local and global context. This means you are free to develop your widget(s) with whatever technology you prefer, as long as they are exposed as a webcomponent. We recommend using `shadowDOM` to avoid styling-conflicts with Colibo, but don't enforce this. Please refer to the examples at the end of this page to see different technologies applied (Angular, react, LitElement, etc.)
 
