@@ -6,7 +6,11 @@ Widgets are the way to extend Colibo with visual or functional components. Widge
 - Sidebar (in its own tab)
 - Search (in its own search-tab)
 - UserProfile (on the profile page)
-- Groups and departments (Above the main content on subpages)
+- Groups and departments (above the main content on subpages)
+- Document (embedded on a document)
+- Feed Entry (embedded into a feed entry)
+- Menu (items in the main menu)
+- 3rd party administration (for managing 3rd party sites and services)
 
 Widgets are stand-alone clientside `webcomponents` that are instantiated with instance-configuration and local and global context. This means you are free to develop your widget(s) with whatever technology you prefer, as long as they are exposed as a webcomponent. We recommend using `shadowDOM` to avoid styling-conflicts with Colibo, but don't enforce this. Please refer to the examples at the end of this page to see different technologies applied (Angular, react, LitElement, etc.)
 
@@ -16,12 +20,12 @@ Widgets are defined by the following fields (and can furthermore be imported/exp
 
 -   **Name** The displayname to show inside Colibo for widget-editors
 -   **Description** A short description for the editor to choose the right widget.
--	**HTMLElementName** The tagName of your custom-element. Colibo will imperatively create the instance of your webcomponent with this name. HTMLElementNames must include a dash, and we recommend using namespaces to avoid potential naming clashes (company-widget). 
--	**BundleUrl** The url to the bundle that registeres your widgets as a webcomponent. Colibo will programmatically load this script lazily the first time a users will load your component.
+-   **HTMLElementName** The tagName of your custom-element. Colibo will imperatively create the instance of your webcomponent with this name. HTMLElementNames must include a dash, and we recommend using namespaces to avoid potential naming clashes (company-widget). 
+-   **BundleUrl** The url to the bundle that registeres your widgets as a webcomponent. Colibo will programmatically load this script lazily the first time a users will load your component.
 -   **LegacyBundleUrl** An (optional) corresponding bundle for older browsers that don't support webcomponents v1. 
--	**AllowedLocations** A list of allowed locations (see above)
+-   **AllowedLocations** A list of allowed locations (see above)
 -   **InitialHeight** A pixel value for the initial height of the widget. This is a means to avoid jumping/shifting the layout when your widget loads (the value will be set as style.minHeight on the element). 
--	**Configuration-definition** Define the configuration-options for your widget as a (nested) list of type, keys, label, required, description and default-values. Use the "builder" in colibo to define your configuration. See below for details about the custom type.
+-   **Configuration-definition** Define the configuration-options for your widget as a (nested) list of type, keys, label, required, description and default-values. Use the "builder" in colibo to define your configuration. See below for details about the custom type.
 
 The widget-registration is available as a json-string from the "source"-tab, and can be uploaded for easy installation (see the accompanying widget.json in the examples linked below).
 
@@ -44,7 +48,6 @@ Search widgets are the way to add more search-capabilities to Colibo. The widget
 
 For some locations widgets are shown in tabs (currently Search and Sidebar). These widgets must maintain a `tabName` (string) property that represents the name of their tab. In the Sidebar, a `icon` property (for an svg) replaces this need. 
 For widgets displayed in tabs, Colibo will maintain an `active` (boolean) property on the widget. We suggest implementing a set'ter function and act appropriately when your widget is not active.
-
 
 ### Custom configuration field widgets
 
