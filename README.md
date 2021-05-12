@@ -140,3 +140,6 @@ Consider these examples/starting points for different frameworks and different p
 -   [hello-world widget](https://github.com/colibodev/widgets/tree/master/examples/vanilla) - Vanilla JS (no framework)
 -   [news-search widget](https://github.com/colibodev/widgets/tree/master/examples/litElement) - LitElement w. Typescript
 
+## Starter kit
+Get started on your own widget with the starter kit. 
+- [Colibo Widget Starter Kit](https://github.com/colibodev/colibo-widget-starter-kit) - LitElement
