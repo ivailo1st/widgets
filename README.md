@@ -131,10 +131,10 @@ To ensure a consistent layout, colibo publishes a set of css custom-properties t
 
 To enable a card-design for your widget, you can add a `clb-widget` className to your element.
 
-## Show widget
-There are cases when a widget's content is empty or if for some reason you decided that said widget should not be displayed. In said cases you can make use of the show widget functionality. The way it works is the widget, that needs to not be displayed, has to dispatch a custom event with the title `showWidget` and `detail: false` if you want it to not be displayed. From there, the component responsible for displaying the widget will catch said event and set the display of said widget to none, which in turn will hide the widget.
+## Hiding widgets
+There are cases when a widget's content is empty or if for some reason you decided that said widget should not be displayed. In these cases you can make use of the `showWidget` custom event. When dispatching this custom event with `detail: false`, the surrounding component will be given the `display` style of `none`.
 
-Note: Widgets can also dispatch another custom event again titled `showWidget` this time around with the `detail` not set, if you want them to be displayed again. 
+Note: Widgets can also dispatch another `showWidget` custom event again with the `detail` not set or set to `true`, if the widget should be visible again. 
 
 ## Polyfilling (browser support)
 Webcomponent-support is pretty broad (see [caniuse](https://caniuse.com/#feat=custom-elementsv1)). For legacy browsers that don't support the entire spec, Colibo conditionally loads the needed [polyfills](https://www.npmjs.com/package/@webcomponents/webcomponentsjs) once, so you don't have to deal with it.
