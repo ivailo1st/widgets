@@ -20,12 +20,24 @@ Widgets are defined by the following fields (and can furthermore be imported/exp
 
 -   **Name** The displayname to show inside Colibo for widget-editors
 -   **Description** A short description for the editor to choose the right widget.
+-   **Categories** A list of texts used for defining the different categories a widget is apart of (ex. News, Video, Image and etc.)
+-   **PosterImage** A url for an image that is displayed as a poster of the widget in the widget library
+-   **ExampleImages** A list of urls to images that are displayed as examples of how a widget looks like when its being used
 -   **HTMLElementName** The tagName of your custom-element. Colibo will imperatively create the instance of your webcomponent with this name. HTMLElementNames must include a dash, and we recommend using namespaces to avoid potential naming clashes (company-widget). 
 -   **BundleUrl** The url to the bundle that registeres your widgets as a webcomponent. Colibo will programmatically load this script lazily the first time a users will load your component.
 -   **LegacyBundleUrl** An (optional) corresponding bundle for older browsers that don't support webcomponents v1. 
 -   **AllowedLocations** A list of allowed locations (see above)
 -   **InitialHeight** A pixel value for the initial height of the widget. This is a means to avoid jumping/shifting the layout when your widget loads (the value will be set as style.minHeight on the element). 
--   **Configuration-definition** Define the configuration-options for your widget as a (nested) list of type, keys, label, required, description and default-values. Use the "builder" in colibo to define your configuration. See below for details about the custom type.
+-   **Configuration-definition** Define the configuration-options for your widget as a (nested) list of: 
+      - **Type** The type of the option (ex. string, boolean, number and etc.)
+      - **Key** Text which is used by the widget's functionality to access said option's value
+      - **Tab** Value used for specifying where if the option will be assigned to the Content, Content settings or Widget settings tabs.  
+      - **Label** Text which is displayed on top of the option when editing/adding a widget
+      - **Required** Boolean used for specifying if the option is required
+      - **Description** Text which is displayed below the label describing the option specification
+      - **DefaultValue** Value that is going to be set to the option
+
+Use the "builder" in colibo to define your configuration. See below for details about the custom type.
 
 The widget-registration is available as a json-string from the "source"-tab, and can be uploaded for easy installation (see the accompanying widget.json in the examples linked below).
 
