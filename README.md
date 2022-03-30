@@ -20,6 +20,9 @@ Widgets are defined by the following fields (and can furthermore be imported/exp
 
 -   **Name** The displayname to show inside Colibo for widget-editors
 -   **Description** A short description for the editor to choose the right widget.
+-   **Categories** A list of texts used for defining the different categories a widget is apart of
+-   **PosterImage** A url used for linking to an image that is displayed as a poster of the widget in the widget library
+-   **ExampleImages** A list of urls that are used for linking images that are displayed as examples of how a widget looks like when its being used
 -   **HTMLElementName** The tagName of your custom-element. Colibo will imperatively create the instance of your webcomponent with this name. HTMLElementNames must include a dash, and we recommend using namespaces to avoid potential naming clashes (company-widget). 
 -   **BundleUrl** The url to the bundle that registeres your widgets as a webcomponent. Colibo will programmatically load this script lazily the first time a users will load your component.
 -   **LegacyBundleUrl** An (optional) corresponding bundle for older browsers that don't support webcomponents v1. 
